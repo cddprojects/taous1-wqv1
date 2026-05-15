@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
       btn.disabled = true;
 
       setTimeout(function () {
-        window.location.href = 'thank-you/index.html';
+        window.location.href = 'thank-you/';
       }, 600);
     });
   }
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
       btn.disabled = true;
 
       setTimeout(function () {
-        window.location.href = '../thank-you/index.html';
+        window.location.href = '../thank-you/';
       }, 600);
     });
   }

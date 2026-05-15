@@ -35,23 +35,19 @@
 <nav class="navbar" role="navigation" aria-label="Main navigation">
   <div class="container nav-inner">
 
-    <a href="${P}index.html" class="nav-logo">
-      <span class="logo-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24">
-          <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
-        </svg>
-      </span>
+    <a href="${P}" class="nav-logo">
+      <img src="${P}images/favicon.png" alt="FraudFund Recovery Logo" class="logo-icon" width="20" height="20">
       FraudFund Recovery
     </a>
 
     <div class="nav-links" id="nav-links">
-      <a href="${P}index.html"${active('home')}>Home</a>
-      <a href="${P}index.html#services">Services</a>
-      <a href="${P}index.html#how-it-works">How It Works</a>
-      <a href="${P}index.html#faq">FAQ</a>
-      <a href="${P}about/index.html"${active('about')}>About Us</a>
-      <a href="${P}contact/index.html"${active('contact')}>Contact</a>
-      <a href="${P}index.html#get-help" class="btn btn-primary nav-cta">Free Evaluation</a>
+      <a href="${P}"${active('home')}>Home</a>
+      <a href="${P}#services">Services</a>
+      <a href="${P}#how-it-works">How It Works</a>
+      <a href="${P}#faq">FAQ</a>
+      <a href="${P}about/"${active('about')}>About Us</a>
+      <a href="${P}contact/"${active('contact')}>Contact</a>
+      <a href="${P}#get-help" class="btn btn-primary nav-cta">Free Evaluation</a>
     </div>
 
     <button class="hamburger" aria-label="Open menu" onclick="toggleMenu()">
@@ -83,12 +79,8 @@
     <div class="footer-grid">
 
       <div class="footer-brand">
-        <a href="${P}index.html" class="nav-logo" style="color:white;">
-          <span class="logo-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24">
-              <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
-            </svg>
-          </span>
+        <a href="${P}" class="nav-logo" style="color:white;">
+          <img src="${P}images/favicon.png" alt="FraudFund Recovery Logo" class="logo-icon" width="20" height="20">
           FraudFund Recovery
         </a>
         <p>Fraud reporting assistance and attorney referral services for online scam victims across the United States.</p>
@@ -103,30 +95,30 @@
       <div class="footer-col">
         <h4>Services</h4>
         <ul>
-          <li><a href="${P}index.html#services">Free Case Evaluation</a></li>
-          <li><a href="${P}index.html#services">Fraud Documentation</a></li>
-          <li><a href="${P}index.html#services">Report Filing Assistance</a></li>
-          <li><a href="${P}index.html#services">Attorney Referral</a></li>
-          <li><a href="${P}index.html#services">Digital Evidence Tracing</a></li>
+          <li><a href="${P}#services">Free Case Evaluation</a></li>
+          <li><a href="${P}#services">Fraud Documentation</a></li>
+          <li><a href="${P}#services">Report Filing Assistance</a></li>
+          <li><a href="${P}#services">Attorney Referral</a></li>
+          <li><a href="${P}#services">Digital Evidence Tracing</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="${P}about/index.html">About Us</a></li>
-          <li><a href="${P}contact/index.html">Contact</a></li>
-          <li><a href="${P}index.html#faq">FAQ</a></li>
-          <li><a href="${P}disclaimer/index.html">Disclaimer</a></li>
+          <li><a href="${P}about/">About Us</a></li>
+          <li><a href="${P}contact/">Contact</a></li>
+          <li><a href="${P}#faq">FAQ</a></li>
+          <li><a href="${P}disclaimer/">Disclaimer</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
         <h4>Legal</h4>
         <ul>
-          <li><a href="${P}privacy-policy/index.html">Privacy Policy</a></li>
-          <li><a href="${P}terms/index.html">Terms of Service</a></li>
-          <li><a href="${P}disclaimer/index.html">Disclaimer</a></li>
+          <li><a href="${P}privacy-policy/">Privacy Policy</a></li>
+          <li><a href="${P}terms/">Terms of Service</a></li>
+          <li><a href="${P}disclaimer/">Disclaimer</a></li>
         </ul>
         <p style="font-size:.75rem;color:rgba(255,255,255,.4);margin-top:1.25rem;">
           We are not affiliated with the FTC, FBI, or any government agency.
@@ -138,10 +130,10 @@
     <div class="footer-bottom">
       <p>&copy; 2026 FraudFund Recovery LLC. All rights reserved. Not a law firm.</p>
       <div class="footer-links">
-        <a href="${P}privacy-policy/index.html">Privacy Policy</a>
-        <a href="${P}terms/index.html">Terms of Service</a>
-        <a href="${P}disclaimer/index.html">Disclaimer</a>
-        <a href="${P}contact/index.html">Contact</a>
+        <a href="${P}privacy-policy/">Privacy Policy</a>
+        <a href="${P}terms/">Terms of Service</a>
+        <a href="${P}disclaimer/">Disclaimer</a>
+        <a href="${P}contact/">Contact</a>
       </div>
     </div>
 

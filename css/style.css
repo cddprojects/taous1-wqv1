@@ -249,6 +249,76 @@ p  { margin-bottom: 1rem; }
   line-height: 1.4;
 }
 
+/* ── QBForm Styles (Adapted from Lead Card) ──────────────────── */
+#QBWpFormIFrame_1{
+  width: 100% !important;
+  min-height: 640px !important;
+  height: auto !important;
+  border: none !important;
+}
+
+.qbform {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem 1.75rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.qbform-field-group {
+  margin-bottom: 1rem;
+}
+.qbform-field-label {
+  display: block;
+  font-size: .82rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: .35rem;
+}
+.qbform-field-input {
+  width: 100%;
+  padding: .7rem .9rem;
+  border: 1.5px solid #dde3ed;
+  border-radius: 6px;
+  font-size: .9rem;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  color: #111827;
+  background: #ffffff;
+  transition: border-color .22s ease;
+  outline: none;
+}
+.qbform-field-input:focus {
+  border-color: #1a57a8;
+}
+.qbform-field-hint {
+  font-size: .72rem;
+  color: #6b7a96;
+  margin-top: .25rem;
+  line-height: 1.4;
+}
+.qbform-field--recaptcha {
+  text-align: center;
+  margin: 1rem 0;
+}
+.qbform-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: .85rem 1.75rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: .95rem;
+  background: #c8922a;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: background .22s ease, transform .22s ease;
+}
+.qbform-btn:hover {
+  background: #e0a83a;
+  transform: translateY(-1px);
+}
+
 /* ── Stats Bar ───────────────────────── */
 .stats-bar { background: var(--navy); color: var(--white); padding: 2rem 0; }
 .stats-inner { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1.5rem; }
