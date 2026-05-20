@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-label="Abstract fraud reporting vector background">
+  <defs>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a57a8" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#c8922a" stop-opacity=".24"/>
+    </linearGradient>
+  </defs>
+  <rect width="760" height="520" fill="none"/>
+  <g fill="none" stroke="url(#line)" stroke-width="2">
+    <path d="M68 391c83-66 158-93 225-81 102 18 126 100 236 83 62-9 111-44 148-104"/>
+    <path d="M103 198c74-55 143-74 207-58 93 24 114 91 210 75 55-9 99-39 132-91"/>
+    <path d="M143 463 271 342 414 428 570 282 676 339"/>
+    <path d="M92 101 229 178 356 84 516 153 651 73"/>
+  </g>
+  <g fill="#1a57a8" fill-opacity=".18">
+    <circle cx="92" cy="101" r="8"/>
+    <circle cx="229" cy="178" r="7"/>
+    <circle cx="356" cy="84" r="8"/>
+    <circle cx="516" cy="153" r="7"/>
+    <circle cx="651" cy="73" r="8"/>
+    <circle cx="143" cy="463" r="8"/>
+    <circle cx="271" cy="342" r="7"/>
+    <circle cx="414" cy="428" r="8"/>
+    <circle cx="570" cy="282" r="7"/>
+    <circle cx="676" cy="339" r="8"/>
+  </g>
+  <g opacity=".16">
+    <rect x="498" y="302" width="146" height="106" rx="18" fill="#ffffff" stroke="#1a57a8" stroke-width="2"/>
+    <path d="M536 340h72M536 365h46M536 389h86" stroke="#1a57a8" stroke-width="8" stroke-linecap="round"/>
+    <path d="M572 248 626 272v41c0 41-23 76-54 89-31-13-54-48-54-89v-41l54-24Z" fill="#0d2b55"/>
+    <path d="m549 323 17 17 35-43" fill="none" stroke="#c8922a" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g fill="#c8922a" fill-opacity=".12">
+    <circle cx="659" cy="449" r="44"/>
+    <circle cx="90" cy="321" r="58"/>
+    <circle cx="641" cy="185" r="28"/>
+  </g>
+</svg>

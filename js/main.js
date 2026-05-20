@@ -39,11 +39,12 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
       }
 
-      // Show loading state then navigate
+      // Show loading state then navigate — read redirect from form's action attribute
       const btn = leadForm.querySelector('button[type="submit"]');
       btn.textContent = 'Submitting…';
       btn.disabled = true;
 
+      const leadRedirect = leadForm.getAttribute('action') || 'thank-you/';
       setTimeout(function () {
         window.location.href = 'thank-you/';
       }, 600);

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="720" viewBox="0 0 1400 720" role="img" aria-label="Abstract secure digital network background">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#123d76" stop-opacity=".95"/>
+      <stop offset="1" stop-color="#071b36" stop-opacity=".9"/>
+    </linearGradient>
+    <radialGradient id="r" cx=".72" cy=".35" r=".55">
+      <stop offset="0" stop-color="#2e78d4" stop-opacity=".36"/>
+      <stop offset=".48" stop-color="#1a57a8" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#091e3a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1400" height="720" fill="url(#g)"/>
+  <rect width="1400" height="720" fill="url(#r)"/>
+  <g fill="none" stroke="#ffffff" stroke-opacity=".13" stroke-width="1.4">
+    <path d="M821 104 956 181 1107 130 1235 229 1178 366 1269 476"/>
+    <path d="M735 271 956 181 1044 329 1178 366 1085 520"/>
+    <path d="M857 463 1044 329 1269 476 1194 617 1012 585"/>
+    <path d="M128 522 271 421 412 481 565 358 735 271"/>
+    <path d="M211 196 381 252 565 358 690 194 821 104"/>
+  </g>
+  <g fill="#ffffff" fill-opacity=".26">
+    <circle cx="821" cy="104" r="5"/>
+    <circle cx="956" cy="181" r="4"/>
+    <circle cx="1107" cy="130" r="5"/>
+    <circle cx="1235" cy="229" r="4"/>
+    <circle cx="1178" cy="366" r="5"/>
+    <circle cx="1269" cy="476" r="4"/>
+    <circle cx="1044" cy="329" r="5"/>
+    <circle cx="1085" cy="520" r="4"/>
+    <circle cx="857" cy="463" r="5"/>
+    <circle cx="565" cy="358" r="5"/>
+    <circle cx="735" cy="271" r="4"/>
+    <circle cx="381" cy="252" r="4"/>
+  </g>
+  <g transform="translate(930 210)" opacity=".26">
+    <path d="M105 0 210 47v71c0 64.7-44.8 125.2-105 140-60.2-14.8-105-75.3-105-140V47L105 0Z" fill="#ffffff"/>
+    <path d="m66 130 28 28 58-68" fill="none" stroke="#0d2b55" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g fill="#c8922a" fill-opacity=".18">
+    <circle cx="1160" cy="84" r="86"/>
+    <circle cx="1330" cy="618" r="54"/>
+    <circle cx="92" cy="108" r="44"/>
+  </g>
+</svg>
