@@ -130,7 +130,88 @@ document.addEventListener('DOMContentLoaded', function () {
       if (stageTitle) stageTitle.textContent = btn.dataset.title || '';
       if (stageLine) stageLine.textContent = btn.dataset.line || '';
       if (caseChip) caseChip.textContent = 'Reviewing: ' + (btn.dataset.title || 'your case');
+      const mapped = {
+        'Phishing and malware': 'Phishing and malware',
+        'Fake exchanges and miners': 'Fake exchange or miner',
+        'Credit cards and fake investments': 'False investment',
+        'Real estate and virtual deals': 'Real estate',
+        'Romance and impersonation': 'Romance',
+        'Task schemes and other fraud': 'Task scheme'
+      }[btn.dataset.title];
+      if (mapped) setCaseType(mapped);
     });
+  });
+
+  /* ── Case type on the review form ────── */
+  const CASE_FORM_ORIGIN = 'https://staging.chatfromforms.com';
+
+  function caseTypeEmbedSrc(embed) {
+    const slug = encodeURIComponent(embed.dataset.cddform || '');
+    const pageQs = new URLSearchParams(window.location.search);
+    let channel = '';
+    if (pageQs.get('gclid')) channel = 'google_ad';
+    else if (pageQs.get('utm_source')) channel = pageQs.get('utm_source');
+    const qs = new URLSearchParams({
+      origin: embed.dataset.origin || '',
+      protocol: window.location.protocol,
+      channel: channel,
+      referral: window.location.href
+    });
+    return CASE_FORM_ORIGIN + '/form/' + slug + '/embed?' + qs.toString();
+  }
+
+  function rememberCaseType(value) {
+    const url = new URL(window.location.href);
+    if (value) url.searchParams.set('case_type', value);
+    else url.searchParams.delete('case_type');
+    history.replaceState(null, '', url.pathname + url.search + url.hash);
+  }
+
+  function bindCaseTypeIframe(embed) {
+    const apply = function (iframe) {
+      const next = caseTypeEmbedSrc(embed);
+      if (iframe.getAttribute('src') !== next) iframe.setAttribute('src', next);
+    };
+    const iframe = embed.querySelector('iframe');
+    if (iframe) { apply(iframe); return; }
+    const obs = new MutationObserver(function () {
+      const frame = embed.querySelector('iframe');
+      if (!frame) return;
+      obs.disconnect();
+      apply(frame);
+    });
+    obs.observe(embed, { childList: true });
+  }
+
+  function setCaseType(value) {
+    document.querySelectorAll('.js-case-type').forEach(function (select) {
+      const match = Array.prototype.some.call(select.options, function (opt) { return opt.value === value; });
+      if (!match || select.value === value) return;
+      select.value = value;
+      select.dispatchEvent(new Event('change'));
+    });
+  }
+
+  document.querySelectorAll('.js-case-type').forEach(function (select) {
+    const card = select.closest('.lead-card') || document;
+    const embed = card.querySelector('[data-cddform]');
+    const lock = card.querySelector('.form-embed-lock');
+    const chip = document.getElementById('case-chip');
+    const saved = new URLSearchParams(window.location.search).get('case_type');
+    if (saved && Array.prototype.some.call(select.options, function (opt) { return opt.value === saved; })) {
+      select.value = saved;
+    }
+
+    const sync = function () {
+      const value = select.value;
+      if (lock) lock.classList.toggle('is-locked', !value);
+      if (chip && value) chip.textContent = 'Reviewing: ' + value;
+      if (!value || !embed) return;
+      rememberCaseType(value);
+      bindCaseTypeIframe(embed);
+    };
+    select.addEventListener('change', sync);
+    if (select.value) sync();
   });
 
   /* ── Process tabs ────────────────────── */

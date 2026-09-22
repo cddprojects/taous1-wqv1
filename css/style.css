@@ -294,6 +294,19 @@ p  { margin-bottom: 1rem; }
   border-color: var(--blue);
 }
 .form-group textarea { resize: vertical; min-height: 80px; }
+.case-type-field { text-align: left; }
+.case-type-gate {
+  margin: 0;
+  padding: .85rem 1rem;
+  border: 1.5px dashed var(--gray-200);
+  border-radius: var(--radius-sm);
+  color: var(--gray-500);
+  font-size: .85rem;
+  text-align: center;
+  background: #f8fafc;
+}
+.form-embed-lock.is-locked [data-cddform] { display: none; }
+.form-embed-lock:not(.is-locked) .case-type-gate { display: none; }
 .form-note {
   font-size: .72rem;
   color: var(--gray-500);
