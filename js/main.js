@@ -235,20 +235,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  /* ── Sticky review bar ───────────────── */
-  const sticky = document.getElementById('sticky-review');
-  const formCard = document.getElementById('get-help');
-  if (sticky && formCard) {
-    const syncSticky = function () {
-      const pastHero = window.scrollY > 520;
-      const formTop = formCard.getBoundingClientRect().top;
-      const formVisible = formTop < window.innerHeight * 0.85 && formTop > -formCard.offsetHeight;
-      sticky.classList.toggle('is-on', pastHero && !formVisible);
-    };
-    window.addEventListener('scroll', syncSticky, { passive: true });
-    syncSticky();
-  }
-
 });
 
 /* ── Mobile Menu ─────────────────────── */

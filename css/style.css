@@ -752,24 +752,6 @@ p  { margin-bottom: 1rem; }
   border-radius: 999px;
   padding: .18rem .6rem;
 }
-.sticky-review {
-  position: fixed;
-  left: 1rem;
-  bottom: 1rem;
-  z-index: 90;
-  display: none;
-  align-items: center;
-  gap: .85rem;
-  max-width: min(560px, calc(100% - 6rem));
-  background: var(--navy);
-  color: #fff;
-  border-radius: 14px;
-  padding: .7rem .7rem .7rem 1rem;
-  box-shadow: 0 14px 36px rgba(0,0,0,.28);
-  border: 1px solid rgba(224,168,58,.45);
-}
-.sticky-review.is-on { display: flex; }
-.sticky-review p { margin: 0; font-size: .86rem; font-weight: 600; }
 .cta-split {
   display: grid;
   grid-template-columns: 1.1fr .9fr;
