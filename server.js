@@ -1,10 +1,12 @@
-// Local preview server — run with: node server.js
+// Local preview server — run with: npm start  (or: node server.js)
 const http = require('http');
 const fs   = require('fs');
 const path = require('path');
 
-const PORT = Number(process.env.PORT) || 3000;
 const ROOT = __dirname;
+const PRIMARY = Number(process.env.PORT) || 3000;
+const EXTRA = PRIMARY === 3001 ? 3000 : 3001;
+const PORTS = process.env.PORT ? [PRIMARY] : [PRIMARY, EXTRA];
 
 const MIME = {
   '.html': 'text/html',
@@ -18,10 +20,9 @@ const MIME = {
   '.woff': 'font/woff',
 };
 
-http.createServer((req, res) => {
-  let urlPath = req.url.split('?')[0]; // strip query string
+function handler(req, res) {
+  let urlPath = req.url.split('?')[0];
 
-  // Default to index.html for directory requests
   if (urlPath.endsWith('/')) urlPath += 'index.html';
 
   const filePath = path.join(ROOT, urlPath);
@@ -30,7 +31,6 @@ http.createServer((req, res) => {
 
   fs.readFile(filePath, (err, data) => {
     if (err) {
-      // Try appending /index.html for clean URLs
       const indexPath = path.join(ROOT, urlPath, 'index.html');
       fs.readFile(indexPath, (err2, data2) => {
         if (err2) {
@@ -46,12 +46,24 @@ http.createServer((req, res) => {
       res.end(data);
     }
   });
-}).listen(PORT, () => {
-  console.log('');
-  console.log('  FraudFund Recovery — Local Preview Server');
-  console.log('  ------------------------------------------');
-  console.log(`  Open in browser: http://localhost:${PORT}`);
-  console.log('');
-  console.log('  Press Ctrl + C to stop the server.');
-  console.log('');
-});
+}
+
+function listen(port) {
+  const server = http.createServer(handler);
+  server.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      console.log(`  Port ${port} already in use — leaving the existing preview in place.`);
+      return;
+    }
+    console.error(err);
+  });
+  server.listen(port, '0.0.0.0', () => {
+    console.log(`  Open in browser: http://localhost:${port}`);
+  });
+}
+
+console.log('');
+console.log('  FraudFund Recovery — Local Preview Server');
+console.log('  ------------------------------------------');
+PORTS.forEach(listen);
+console.log('');

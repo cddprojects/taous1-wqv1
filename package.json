@@ -1,0 +1,8 @@
+{
+  "name": "fraudfund-recovery",
+  "private": true,
+  "description": "FraudFund Recovery static site local preview",
+  "scripts": {
+    "start": "node start.js"
+  }
+}
