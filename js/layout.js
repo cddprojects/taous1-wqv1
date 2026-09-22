@@ -76,7 +76,7 @@
       <a href="${R.faq}">FAQ</a>
       <a href="${R.about}"${active('about')}>About Us</a>
       <a href="${R.contact}"${active('contact')}>Contact</a>
-      <a href="${R.getHelp}" class="btn btn-primary nav-cta">Free Evaluation</a>
+      <a href="${R.getHelp}" class="btn btn-primary nav-cta">Contact us today</a>
     </div>
 
     <button class="hamburger" aria-label="Open menu" onclick="toggleMenu()">
