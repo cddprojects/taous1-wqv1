@@ -4,9 +4,9 @@ const fs   = require('fs');
 const path = require('path');
 
 const ROOT = __dirname;
-const PRIMARY = Number(process.env.PORT) || 3000;
-const EXTRA = PRIMARY === 3001 ? 3000 : 3001;
-const PORTS = process.env.PORT ? [PRIMARY] : [PRIMARY, EXTRA];
+// Cursor Ports panel maps this VM port to the user's PC (e.g. 3000 → 3001).
+// Do not also bind 3001 here — that fights the local forward.
+const PORT = Number(process.env.PORT) || 3000;
 
 const MIME = {
   '.html': 'text/html',
@@ -72,5 +72,5 @@ function listen(port) {
 console.log('');
 console.log('  FraudFund Recovery — Local Preview Server');
 console.log('  ------------------------------------------');
-PORTS.forEach(listen);
+listen(PORT);
 console.log('');

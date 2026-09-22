@@ -18,8 +18,8 @@ function isUp(port) {
 }
 
 (async () => {
-  if ((await isUp(3001)) || (await isUp(3000))) {
-    console.log('Preview already running on 3000/3001. Holding this process open.');
+  if (await isUp(3000)) {
+    console.log('Preview already running on 3000. Holding this process open.');
     setInterval(() => {}, 1 << 30);
     return;
   }
