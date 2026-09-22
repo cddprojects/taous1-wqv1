@@ -29,6 +29,12 @@
 
   /* ── Routes: LP page uses /lp/#anchors; root pages use /#anchors ─ */
   const LP_BASE = '/lp/';
+
+  // Works both when served (absolute /path/) and opened as a local file (file://)
+  // All pages are either at root (home) or exactly one directory deep.
+  const isRoot = activePage === 'home' && !isLpPage;
+  const imgBase = isRoot ? '' : '../';
+
   const R = isLpPage
     ? {
         home: LP_BASE,
@@ -42,7 +48,7 @@
         howItWorks: LP_BASE + '#how-it-works',
         faq: LP_BASE + '#faq',
         getHelp: LP_BASE + '#get-help',
-        favicon: '/images/favicon.png',
+        favicon: imgBase + 'images/favicon.png',
       }
     : {
         home: '/',
@@ -56,7 +62,7 @@
         howItWorks: '/#how-it-works',
         faq: '/#faq',
         getHelp: '/#get-help',
-        favicon: '/images/favicon.png',
+        favicon: imgBase + 'images/favicon.png',
       };
 
   /* ── Header HTML ───────────────────────── */
@@ -76,7 +82,7 @@
       <a href="${R.faq}">FAQ</a>
       <a href="${R.about}"${active('about')}>About Us</a>
       <a href="${R.contact}"${active('contact')}>Contact</a>
-      <a href="${R.getHelp}" class="btn btn-primary nav-cta">Free Evaluation</a>
+      <a href="${R.getHelp}" class="btn btn-primary nav-cta">Contact us today</a>
     </div>
 
     <button class="hamburger" aria-label="Open menu" onclick="toggleMenu()">
@@ -95,9 +101,10 @@
 <div class="disclaimer-bar">
   <div class="container">
     <p>
-      <strong>Important Disclaimer:</strong> FraudFund Recovery helps online-fraud victims
-      pursue recovery of hard-earned funds with integrity, caution, and reliability.
-      Each case is unique and depends on the facts and available evidence. Outcomes vary.
+      <strong>Important Disclaimer:</strong> FraudFund Recovery provides confidential
+      recovery assistance for online-fraud cases, with integrity, caution, and reliability.
+      Each case is unique and depends on the facts and available evidence.
+      We do not guarantee that funds will be returned.
       We are not a government agency or financial institution.
     </p>
   </div>
@@ -112,7 +119,7 @@
           <img src="${R.favicon}" alt="FraudFund Recovery Logo" class="logo-icon" width="20" height="20">
           FraudFund Recovery
         </a>
-        <p>Confidential recovery assistance for victims of online fraud across the United States. You are not alone — we are here to help you recover your peace of mind.</p>
+        <p>Confidential case review and recovery assistance for online-fraud cases across the United States. Dedicated to every case.</p>
         <p style="font-size:.78rem;margin-top:.5rem;">
           1250 Broadway, Suite 3600<br>New York, NY 10001<br>
           <a href="mailto:info@fraudfundrecovery.com" style="color:rgba(255,255,255,.65);">
