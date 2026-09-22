@@ -34,18 +34,24 @@ function handler(req, res) {
       const indexPath = path.join(ROOT, urlPath, 'index.html');
       fs.readFile(indexPath, (err2, data2) => {
         if (err2) {
-          res.writeHead(404, { 'Content-Type': 'text/html' });
-          res.end('<h2>404 — Page not found</h2><a href="/">Go Home</a>');
+          send(res, 404, 'text/html', Buffer.from('<h2>404 — Page not found</h2><a href="/">Go Home</a>'));
         } else {
-          res.writeHead(200, { 'Content-Type': 'text/html' });
-          res.end(data2);
+          send(res, 200, 'text/html', data2);
         }
       });
     } else {
-      res.writeHead(200, { 'Content-Type': mime });
-      res.end(data);
+      send(res, 200, mime, data);
     }
   });
+}
+
+function send(res, status, mime, body) {
+  res.writeHead(status, {
+    'Content-Type': mime,
+    'Content-Length': Buffer.byteLength(body),
+    Connection: 'close',
+  });
+  res.end(body);
 }
 
 function listen(port) {
@@ -57,8 +63,9 @@ function listen(port) {
     }
     console.error(err);
   });
-  server.listen(port, '0.0.0.0', () => {
-    console.log(`  Open in browser: http://localhost:${port}`);
+  // Dual-stack so both 127.0.0.1 and ::1 / localhost work.
+  server.listen({ port, host: '::', ipv6Only: false }, () => {
+    console.log(`  Open in browser: http://127.0.0.1:${port}  (also http://localhost:${port})`);
   });
 }
 
