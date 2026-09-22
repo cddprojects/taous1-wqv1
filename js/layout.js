@@ -12,6 +12,7 @@
   const isLpPage = path.includes('/lp');
 
   const activePage =
+    path.includes('/services')       ? 'services' :
     path.includes('/about')          ? 'about'   :
     path.includes('/contact')        ? 'contact' :
     path.includes('/privacy-policy') ? 'legal'   :
@@ -37,7 +38,7 @@
         terms: '/terms/',
         disclaimer: '/disclaimer/',
         thankYou: '/thank-you/',
-        services: LP_BASE + '#services',
+        services: '/services/',
         howItWorks: LP_BASE + '#how-it-works',
         faq: LP_BASE + '#faq',
         getHelp: LP_BASE + '#get-help',
@@ -51,7 +52,7 @@
         terms: '/terms/',
         disclaimer: '/disclaimer/',
         thankYou: '/thank-you/',
-        services: '/#services',
+        services: '/services/',
         howItWorks: '/#how-it-works',
         faq: '/#faq',
         getHelp: '/#get-help',
@@ -70,7 +71,7 @@
 
     <div class="nav-links" id="nav-links">
       <a href="${R.home}"${active('home')}>Home</a>
-      <a href="${R.services}">Services</a>
+      <a href="${R.services}"${active('services')}>Services</a>
       <a href="${R.howItWorks}">How It Works</a>
       <a href="${R.faq}">FAQ</a>
       <a href="${R.about}"${active('about')}>About Us</a>
@@ -94,10 +95,10 @@
 <div class="disclaimer-bar">
   <div class="container">
     <p>
-      <strong>Important Disclaimer:</strong> FraudFund Recovery is a fraud reporting assistance
-      and referral service. We are not a law firm, government agency, or financial institution.
-      We do not guarantee the recovery of any funds. Services and outcomes vary by individual case.
-      Filing a report does not guarantee any action will be taken by law enforcement.
+      <strong>Important Disclaimer:</strong> FraudFund Recovery helps online-fraud victims
+      pursue recovery of hard-earned funds with integrity, caution, and reliability.
+      Each case is unique and depends on the facts and available evidence. Outcomes vary.
+      We are not a government agency or financial institution.
     </p>
   </div>
 </div>
@@ -111,7 +112,7 @@
           <img src="${R.favicon}" alt="FraudFund Recovery Logo" class="logo-icon" width="20" height="20">
           FraudFund Recovery
         </a>
-        <p>Fraud reporting assistance and attorney referral services for online scam victims across the United States.</p>
+        <p>Confidential recovery assistance for victims of online fraud across the United States. You are not alone — we are here to help you recover your peace of mind.</p>
         <p style="font-size:.78rem;margin-top:.5rem;">
           1250 Broadway, Suite 3600<br>New York, NY 10001<br>
           <a href="mailto:info@fraudfundrecovery.com" style="color:rgba(255,255,255,.65);">
@@ -123,11 +124,12 @@
       <div class="footer-col">
         <h4>Services</h4>
         <ul>
-          <li><a href="${R.services}">Free Case Evaluation</a></li>
-          <li><a href="${R.services}">Fraud Documentation</a></li>
-          <li><a href="${R.services}">Report Filing Assistance</a></li>
-          <li><a href="${R.services}">Attorney Referral</a></li>
-          <li><a href="${R.services}">Digital Evidence Tracing</a></li>
+          <li><a href="${R.services}#phishing">Phishing &amp; Malware</a></li>
+          <li><a href="${R.services}#exchanges">Fake Exchanges &amp; Miners</a></li>
+          <li><a href="${R.services}#investments">Credit Card &amp; Fake Investments</a></li>
+          <li><a href="${R.services}#real-estate">Real Estate &amp; Virtual Investments</a></li>
+          <li><a href="${R.services}#romance">Romance &amp; Impersonation</a></li>
+          <li><a href="${R.services}#task-scams">Task Scams &amp; Other Fraud</a></li>
         </ul>
       </div>
 
@@ -156,7 +158,7 @@
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2026 FraudFund Recovery LLC. All rights reserved. Not a law firm.</p>
+      <p>&copy; 2026 FraudFund Recovery LLC. All rights reserved.</p>
       <div class="footer-links">
         <a href="${R.privacy}">Privacy Policy</a>
         <a href="${R.terms}">Terms of Service</a>

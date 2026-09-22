@@ -333,6 +333,41 @@ p  { margin-bottom: 1rem; }
 .card-icon svg { color: var(--blue); }
 .card h3 { margin-bottom: .5rem; color: var(--navy); }
 .card p { color: var(--gray-500); font-size: .9rem; margin: 0; }
+.card-anchor { scroll-margin-top: 88px; }
+.check-list {
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+  margin: 1.5rem auto 0;
+  max-width: 520px;
+  text-align: left;
+  list-style: none;
+  padding: 0;
+}
+.check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: .7rem;
+  font-size: .95rem;
+  color: var(--gray-700);
+  font-weight: 600;
+}
+.check-mark {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #dcfce7;
+  color: var(--success);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+.section-more {
+  text-align: center;
+  margin-top: 2rem;
+}
 
 /* ── Visual Panels ───────────────────── */
 .section-visual {
