@@ -29,6 +29,12 @@
 
   /* ── Routes: LP page uses /lp/#anchors; root pages use /#anchors ─ */
   const LP_BASE = '/lp/';
+
+  // Works both when served (absolute /path/) and opened as a local file (file://)
+  // All pages are either at root (home) or exactly one directory deep.
+  const isRoot = activePage === 'home' && !isLpPage;
+  const imgBase = isRoot ? '' : '../';
+
   const R = isLpPage
     ? {
         home: LP_BASE,
@@ -42,7 +48,7 @@
         howItWorks: LP_BASE + '#how-it-works',
         faq: LP_BASE + '#faq',
         getHelp: LP_BASE + '#get-help',
-        favicon: '/images/favicon.png',
+        favicon: imgBase + 'images/favicon.png',
       }
     : {
         home: '/',
@@ -56,7 +62,7 @@
         howItWorks: '/#how-it-works',
         faq: '/#faq',
         getHelp: '/#get-help',
-        favicon: '/images/favicon.png',
+        favicon: imgBase + 'images/favicon.png',
       };
 
   /* ── Header HTML ───────────────────────── */
