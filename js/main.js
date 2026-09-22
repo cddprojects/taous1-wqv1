@@ -109,6 +109,65 @@ document.addEventListener('DOMContentLoaded', function () {
     if (nav) nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,.10)' : 'none';
   });
 
+  /* ── Case type studio ────────────────── */
+  const stageImg = document.getElementById('case-photo');
+  const stageTitle = document.getElementById('case-title');
+  const stageLine = document.getElementById('case-line');
+  const caseChip = document.getElementById('case-chip');
+  document.querySelectorAll('.case-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.case-btn').forEach(function (b) {
+        b.classList.remove('is-active');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      btn.classList.add('is-active');
+      btn.setAttribute('aria-pressed', 'true');
+      if (stageImg) {
+        stageImg.src = btn.dataset.img;
+        stageImg.alt = btn.dataset.alt || '';
+        stageImg.style.objectPosition = btn.dataset.pos || 'center';
+      }
+      if (stageTitle) stageTitle.textContent = btn.dataset.title || '';
+      if (stageLine) stageLine.textContent = btn.dataset.line || '';
+      if (caseChip) caseChip.textContent = 'Reviewing: ' + (btn.dataset.title || 'your case');
+    });
+  });
+
+  /* ── Process tabs ────────────────────── */
+  const stepPhoto = document.getElementById('step-photo');
+  const stepTitle = document.getElementById('step-title');
+  const stepLine = document.getElementById('step-line');
+  document.querySelectorAll('.step-tab').forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      document.querySelectorAll('.step-tab').forEach(function (t) {
+        t.classList.remove('is-active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('is-active');
+      tab.setAttribute('aria-selected', 'true');
+      if (stepPhoto && tab.dataset.img) {
+        stepPhoto.src = tab.dataset.img;
+        stepPhoto.alt = tab.dataset.alt || '';
+      }
+      if (stepTitle) stepTitle.textContent = tab.dataset.title || '';
+      if (stepLine) stepLine.textContent = tab.dataset.line || '';
+    });
+  });
+
+  /* ── Sticky review bar ───────────────── */
+  const sticky = document.getElementById('sticky-review');
+  const formCard = document.getElementById('get-help');
+  if (sticky && formCard) {
+    const syncSticky = function () {
+      const pastHero = window.scrollY > 520;
+      const formTop = formCard.getBoundingClientRect().top;
+      const formVisible = formTop < window.innerHeight * 0.85 && formTop > -formCard.offsetHeight;
+      sticky.classList.toggle('is-on', pastHero && !formVisible);
+    };
+    window.addEventListener('scroll', syncSticky, { passive: true });
+    syncSticky();
+  }
+
 });
 
 /* ── Mobile Menu ─────────────────────── */
